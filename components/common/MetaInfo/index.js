@@ -4,7 +4,7 @@ import { Title, Text } from '../Text'
 
 export default function MetaInfo(props) {
   return (
-    <div className="mt-16 grid grid-flow-row-dense grid-cols-4 gap-4 px-4 md:mt-32 md:gap-12 md:px-48">
+    <div className="a mt-16 grid grid-flow-row-dense grid-cols-4 gap-4 px-4 md:mt-32 md:gap-12 md:px-48">
       <div className="flex flex-col">
         <div className="mb-3">
           <Title>Customer service</Title>
