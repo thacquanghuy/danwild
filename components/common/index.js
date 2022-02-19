@@ -1,0 +1,6 @@
+export { default as Button } from './Button'
+export { default as Product } from './Product'
+export { default as BackgroundHero } from './BackgroundHero'
+export { default as Navbar } from './Navbar'
+export { default as MetaInfo } from './MetaInfo'
+export { default as Footer } from './Footer'
