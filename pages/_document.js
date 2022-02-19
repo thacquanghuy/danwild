@@ -7,11 +7,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="http://fonts.cdnfonts.com/css/sofia-pro"
+            href="https://fonts.cdnfonts.com/css/sofia-pro"
             rel="stylesheet"
           />
           <link
-            href="http://fonts.cdnfonts.com/css/helvetica-neue-9"
+            href="https://fonts.cdnfonts.com/css/helvetica-neue-9"
             rel="stylesheet"
           />
         </Head>
