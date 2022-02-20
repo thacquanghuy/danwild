@@ -6,7 +6,7 @@ import { Expand } from '../index'
 export default function MetaInfo(props) {
   const [isMobile, setIsMobile] = React.useState(false)
   React.useEffect(() => {
-    if (window.innerHeight < 768) {
+    if (window.innerWidth < 768) {
       setIsMobile(true)
     }
   }, [])
