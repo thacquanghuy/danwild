@@ -1,0 +1,33 @@
+.expand-container {
+  &--bordered {
+    box-shadow: 0 1px 1px -1px $text-color;
+  }
+  .header-container {
+    text-align: center;
+    position: relative;
+  }
+
+  .content-container {
+    text-align: center;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.2s;
+    opacity: 0;
+
+    &--expanded {
+      max-height: 100%;
+      opacity: 1;
+    }
+  }
+
+  .expand-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%) rotate(90deg);
+    transition: all 0.3s;
+    &--expanded {
+      transform: translateY(-55%) rotate(-90deg);
+    }
+  }
+}

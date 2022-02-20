@@ -5,7 +5,11 @@ import { Title, Price } from '../Text'
 export default function Product(props) {
   const { image, name, price } = props
   return (
-    <div className={`${styles[`product-container`]}`}>
+    <div
+      className={`${
+        styles[`product-container`]
+      } mr-4 inline-block w-3/5 md:mr-0 md:block md:w-full`}
+    >
       <img src={image} className={`w-full`} />
       <div className="mt-2">
         <Title>{name}</Title>

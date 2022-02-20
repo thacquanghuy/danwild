@@ -4,8 +4,7 @@ import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Button, Product, BackgroundHero, Navbar } from '../common'
-import NavbarMobile from '../common/Navbar/navbar-mobile'
+import { Button, Product, BackgroundHero } from '../common'
 
 export default function IndexPage(props) {
   const properties = {
@@ -62,7 +61,7 @@ export default function IndexPage(props) {
         </div>
       </div>
       <section className={`${styles[`product-section`]} mt-8 md:mt-20`}>
-        <div className="grid grid-cols-3 gap-4 px-4 md:gap-8 md:px-48">
+        <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48">
           {[1, 2, 3, 4, 5, 6].map((p, idx) => (
             <Product
               key={idx}
@@ -86,7 +85,7 @@ export default function IndexPage(props) {
         />
       </div>
       <section className={`${styles[`product-section`]}  mt-8 md:mt-20`}>
-        <div className="mb-10 grid grid-cols-4 gap-4 px-4 md:gap-8 md:px-48">
+        <div className=" mb-10 grid-cols-4 gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:gap-8 md:px-48">
           {[1, 2, 3].map((p, idx) => (
             <Product
               key={idx}
