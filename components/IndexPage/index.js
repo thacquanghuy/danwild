@@ -25,7 +25,9 @@ export default function IndexPage(props) {
   const ref = useRef(null)
 
   useEffect(() => {
-    FB.CustomerChat.show()
+    if (FB?.CustomerChat) {
+      FB.CustomerChat.show()
+    }
     const inter = setInterval(() => {
       ref.current.goNext()
     }, 7000)
