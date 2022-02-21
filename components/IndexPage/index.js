@@ -6,6 +6,31 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Product, BackgroundHero } from '../common'
 
+const products = [
+  {
+    id: 1,
+    name: 'This is a name',
+    price: 400000,
+  },
+  {
+    id: 2,
+    name: 'This is a name',
+    price: 400000,
+  },
+  ,
+  {
+    id: 3,
+    name: 'This is a name',
+    price: 400000,
+  },
+  ,
+  {
+    id: 4,
+    name: 'This is a name',
+    price: 400000,
+  },
+]
+
 export default function IndexPage(props) {
   const properties = {
     duration: 5000,
@@ -65,11 +90,10 @@ export default function IndexPage(props) {
       </div>
       <section className={`${styles[`product-section`]} mt-8 md:mt-20`}>
         <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48">
-          {[1, 2, 3, 4, 5, 6].map((p, idx) => (
+          {products.map((p, idx) => (
             <Product
-              key={idx}
-              name="this is a name"
-              price={40000}
+              data={p}
+              key={p.id}
               image={
                 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg'
               }
@@ -89,11 +113,10 @@ export default function IndexPage(props) {
       </div>
       <section className={`${styles[`product-section`]}  mt-8 md:mt-20`}>
         <div className=" mb-10 grid-cols-4 gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:gap-8 md:px-48">
-          {[1, 2, 3].map((p, idx) => (
+          {products.map((p, idx) => (
             <Product
-              key={idx}
-              name="this is a name"
-              price={40000}
+              key={p.id}
+              data={p}
               image={
                 'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg'
               }

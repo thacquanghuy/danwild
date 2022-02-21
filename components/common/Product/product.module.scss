@@ -5,4 +5,50 @@
 
   .product-price {
   }
+
+  .image-container {
+    position: relative;
+    .cart-button {
+      opacity: 0;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      color: #fff;
+      padding: 12px 30px;
+      transition: all 0.4s;
+      border: solid 1px white;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.562);
+      }
+
+      &:active {
+        top: 81%;
+      }
+    }
+
+    &:hover {
+      .cart-button {
+        opacity: 1;
+      }
+    }
+
+    &:hover {
+      .product-image {
+        -webkit-filter: brightness(40%);
+        -webkit-transition: all 0.4s ease;
+        -moz-transition: all 0.4s ease;
+        -o-transition: all 0.4s ease;
+        -ms-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+      }
+    }
+  }
+
+  .product-image {
+    -webkit-filter: brightness(100%);
+  }
 }

@@ -29,7 +29,9 @@ export default function Expand(props) {
         />
       </div>
 
-      <Collapse isOpen={expanded}>{renderContent()}</Collapse>
+      <Collapse isOpen={expanded}>
+        <div className="mb-4 text-center">{renderContent()}</div>
+      </Collapse>
     </div>
   )
 }

@@ -1,22 +1,29 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './navbar.module.scss'
 import Image from 'next/image'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import NavbarMobile from './navbar-mobile'
-
+import { CartContext } from '../../../context/cart'
+import { OPEN_CART } from '../../../context/cartActionType'
 import { Title } from '../Text'
 export default function Header(props) {
   const [y, setY] = React.useState(null)
   const [isWhite, setisWhite] = React.useState(false)
   const [mobileHidden, setHidden] = React.useState(true)
-
+  const [state, dispatch] = useContext(CartContext)
   const scrollListener = (e) => {
     if (window.scrollY > 300) {
       setisWhite(true)
     } else {
       setisWhite(false)
     }
+  }
+
+  const onOpenCart = () => {
+    dispatch({
+      type: OPEN_CART,
+    })
   }
 
   React.useEffect(() => {
@@ -73,7 +80,11 @@ export default function Header(props) {
           }}
           size={25}
         />
-        <AiOutlineShopping size={25} />
+        <AiOutlineShopping
+          onClick={onOpenCart}
+          style={{ cursor: 'pointer' }}
+          size={25}
+        />
       </div>
       <NavbarMobile
         onClose={() => {
