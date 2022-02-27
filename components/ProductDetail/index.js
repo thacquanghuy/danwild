@@ -44,7 +44,7 @@ export default function ProductDetail(props) {
             className="mt-3 w-full md:w-2/5"
             text="Add to cart"
           />
-          {data.description && (
+          {data?.description && (
             <Title className="mt-3 text-3xl">Description</Title>
           )}
         </div>
