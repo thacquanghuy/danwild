@@ -1,5 +1,4 @@
 import React from 'react'
-import Head from 'next/head'
 import styles from './layout.module.scss'
 
 export default function Layout({ children }) {

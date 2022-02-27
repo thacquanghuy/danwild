@@ -15,11 +15,12 @@ class MyDocument extends Document {
             href="https://fonts.cdnfonts.com/css/helvetica-neue-9"
             rel="stylesheet"
           />
-          {/* <script
-            async
-            defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPQoNeWrSYOaJsYuuffPT7ubIa9TJmdrw&callback=initMap"
-          ></script> */}
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Arima+Madurai:wght@100;200;300;400;500;700;800;900&family=Dancing+Script&family=Italiana&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <script

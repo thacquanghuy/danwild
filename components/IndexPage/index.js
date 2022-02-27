@@ -1,37 +1,18 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useContext } from 'react'
 import styles from './index_page.module.scss'
 import { Slide } from 'react-slideshow-image'
 import 'react-slideshow-image/dist/styles.css'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Product, BackgroundHero } from '../common'
-
-const products = [
-  {
-    id: 1,
-    name: 'This is a name',
-    price: 400000,
-  },
-  {
-    id: 2,
-    name: 'This is a name',
-    price: 400000,
-  },
-  ,
-  {
-    id: 3,
-    name: 'This is a name',
-    price: 400000,
-  },
-  ,
-  {
-    id: 4,
-    name: 'This is a name',
-    price: 400000,
-  },
-]
+import { ProductContext } from '../../context/product'
+import { useRouter } from 'next/router'
 
 export default function IndexPage(props) {
+  const [state] = useContext(ProductContext)
+  const router = useRouter()
+  const candleProducts = state.candle
+  const oilProducts = state.oil
   const properties = {
     duration: 5000,
     autoplay: false,
@@ -71,7 +52,7 @@ export default function IndexPage(props) {
           ))}
         </Slide>
         <div className={styles[`view-button-container`]}>
-          <Button text="View All" />
+          <Button text="Xem tất cả" />
         </div>
         <div className={`${styles['buttons']}`}>
           <FontAwesomeIcon
@@ -89,19 +70,21 @@ export default function IndexPage(props) {
         </div>
       </div>
       <section className={`${styles[`product-section`]} mt-8 md:mt-20`}>
-        <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48">
-          {products.map((p, idx) => (
+        <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 ">
+          {candleProducts.map((p, idx) => (
             <Product
-              data={p}
+              data={{
+                ...p,
+              }}
               key={p.id}
-              image={
-                'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg'
-              }
             />
           ))}
         </div>
         <div className="mt-10 grid place-content-center">
-          <Button text="View all" />
+          <Button
+            onClick={() => router.push('/candle')}
+            text="Sản phẩm nến thơm"
+          />
         </div>
       </section>
       <div className="mt-16">
@@ -113,18 +96,20 @@ export default function IndexPage(props) {
       </div>
       <section className={`${styles[`product-section`]}  mt-8 md:mt-20`}>
         <div className=" mb-10 grid-cols-4 gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:gap-8 md:px-48">
-          {products.map((p, idx) => (
+          {oilProducts.map((p, idx) => (
             <Product
               key={p.id}
-              data={p}
-              image={
-                'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg'
-              }
+              data={{
+                ...p,
+              }}
             />
           ))}
         </div>
         <div className="grid place-content-center">
-          <Button text="View all" />
+          <Button
+            onClick={() => router.push('/oil')}
+            text="Sản phẩm tinh dầu"
+          />
         </div>
       </section>
     </div>

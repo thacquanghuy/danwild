@@ -84,7 +84,7 @@ export default function MetaInfo(props) {
         </>
       )}
 
-      <div className="col-span-2 mt-4" style={{ height: '200px' }}>
+      <div className="col-span-2 mt-4 md:mt-0" style={{ height: '200px' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: 'AIzaSyAPQoNeWrSYOaJsYuuffPT7ubIa9TJmdrw' }}
           defaultCenter={defaultProps.center}

@@ -7,6 +7,19 @@
   }
 
   .image-container {
+    &:before {
+      top: 0;
+      left: 0;
+      display: block;
+      content: '';
+      position: absolute;
+      width: 100%;
+      z-index: 10;
+      height: 100%;
+      -moz-box-shadow: inset 0px 0px 2px 1px #fff;
+      -webkit-box-shadow: inset 0px 0px 2px 1px #fff;
+      box-shadow: inset 0px 0px 2px 1px #fff;
+    }
     position: relative;
     .cart-button {
       opacity: 0;
@@ -16,6 +29,7 @@
       transform: translate(-50%, -50%);
       display: flex;
       align-items: center;
+      z-index: 20;
       color: #fff;
       padding: 12px 30px;
       transition: all 0.4s;
@@ -49,6 +63,7 @@
   }
 
   .product-image {
+    position: relative;
     -webkit-filter: brightness(100%);
   }
 }

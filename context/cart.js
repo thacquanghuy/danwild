@@ -1,5 +1,10 @@
 import React, { createContext, useContext, useReducer } from 'react'
-import { ADD_ITEM_TO_CART, OPEN_CART, CLOSE_CART } from './cartActionType'
+import {
+  ADD_ITEM_TO_CART,
+  OPEN_CART,
+  CLOSE_CART,
+  REMOVE_ITEM_FROM_CART,
+} from './cartActionType'
 
 export const CartContext = createContext()
 
@@ -10,7 +15,7 @@ const initState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case ADD_ITEM_TO_CART:
+    case ADD_ITEM_TO_CART: {
       const {
         payload: { item },
       } = action
@@ -26,6 +31,30 @@ const reducer = (state, action) => {
             })
           : [...state.items, { ...item, quantity: 1 }],
       }
+    }
+    case REMOVE_ITEM_FROM_CART: {
+      const {
+        payload: { id },
+      } = action
+      const found = state.items.find((i) => i.id == id)
+      if (found.quantity === 1) {
+        return {
+          ...state,
+          items: state.items.filter((i) => i.id != id),
+        }
+      } else {
+        return {
+          ...state,
+          items: state.items.map((i) => {
+            if (i.id == id) {
+              return { ...i, quantity: i.quantity - 1 }
+            } else {
+              return i
+            }
+          }),
+        }
+      }
+    }
 
     case OPEN_CART:
       return {

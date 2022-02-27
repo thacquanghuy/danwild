@@ -1,17 +1,19 @@
 .button {
-  background-color: rgba(0, 0, 0, 0.39);
+  background-color: $button-color--black;
   border-radius: 28px;
   border: 1px solid #fff;
   display: inline-block;
   cursor: pointer;
   color: #fff;
   padding: 10px 30px;
-  transition: all ease 0.5s;
+  transition: all 0.5s;
   text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-family: 'Arima Madurai', sans-serif;
 }
 .button:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: $button-color--hover;
+  color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.39);
 }
 .button:active {

@@ -5,15 +5,6 @@
   z-index: 100;
   top: 0;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  &--white {
-    background: #fff;
-    color: $text-color !important;
-    box-shadow: 0 0 1px #0003;
-
-    .nav-item {
-      color: $text-color !important;
-    }
-  }
 
   .main-nav-container {
     .nav-item-container {
@@ -22,6 +13,14 @@
         font-size: 1rem;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &--active {
+          p::after {
+            opacity: 1 !important;
+            background-color: #fff !important;
+            transform: translate3d(0, 0, 0) !important ;
+          }
+        }
       }
 
       p {
@@ -52,6 +51,32 @@
     }
   }
 
+  &--white {
+    background: #fff;
+    color: $text-color !important;
+    box-shadow: 0 0 1px #0003;
+
+    .main-nav-container {
+      .nav-item-container {
+        .nav-item {
+          color: $text-color !important;
+
+          &--active {
+            p::after {
+              opacity: 1 !important;
+              background-color: $text-color !important;
+              transform: translate3d(0, 0, 0) !important ;
+            }
+          }
+
+          p::after {
+            background-color: $text-color !important;
+          }
+        }
+      }
+    }
+  }
+
   .navbar-mobile {
     position: fixed;
     top: 0;
@@ -68,6 +93,27 @@
 
     .content {
       background-color: #fff;
+    }
+  }
+}
+
+.cart-container {
+  position: relative;
+
+  .red-icon {
+    opacity: 0;
+    transition: all 0.3s;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #ff4f33;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    &--active {
+      opacity: 1;
     }
   }
 }
