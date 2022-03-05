@@ -4,9 +4,9 @@ import { Title, Price } from '../Text'
 import { AiOutlineShopping } from 'react-icons/ai'
 import { ADD_ITEM_TO_CART } from '../../../context/cartActionType'
 import { CartContext } from '../../../context/cart'
-import CurrencyFormat from 'react-currency-format'
-
+import { useRouter } from 'next/router'
 export default function Product(props) {
+  const router = useRouter()
   const { data } = props
   const [state, dispatch] = useContext(CartContext)
   const onAdd = () => {
@@ -32,15 +32,14 @@ export default function Product(props) {
       </div>
 
       <div className="mt-2">
-        <Title>{data.name}</Title>
+        <Title
+          onClick={() => router.push(`/product/${data.id}`)}
+          className="cursor-pointer"
+        >
+          {data.name}
+        </Title>
       </div>
-      <Price className={styles[`product-price`]}>
-        <CurrencyFormat
-          thousandSeparator={true}
-          value={data.price}
-          displayType={'text'}
-        />
-      </Price>
+      <Price text={data.price} className={styles[`product-price`]}></Price>
     </div>
   )
 }

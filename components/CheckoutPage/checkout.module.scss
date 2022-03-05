@@ -1,0 +1,45 @@
+.link {
+  color: #474643a9;
+  transition: all 0.2s;
+
+  &:hover {
+    color: $text-color;
+  }
+}
+
+.product-container {
+  border-radius: 8px;
+  border: 1px rgba(0, 0, 0, 0.1) solid;
+  width: 80px;
+  height: 80px;
+  // overflow: hidden;
+  display: flex;
+  padding: 0 6px;
+  justify-content: center;
+  position: relative;
+
+  .quantity {
+    font-weight: 600;
+    white-space: nowrap;
+    text-align: center;
+    border-radius: 1.75em;
+    background-color: rgba(114, 114, 114, 0.9);
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    min-width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    right: -0.75em;
+    top: -0.75em;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

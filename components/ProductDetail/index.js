@@ -39,14 +39,22 @@ export default function ProductDetail(props) {
               displayType={'text'}
             />
           </p>
+
+          {data?.description && (
+            <div className="mt-8">
+              <Title className="mt-3 text-center text-2xl md:text-left">
+                Description
+              </Title>
+              <p className="mt-2 text-center md:text-left">
+                {data?.description}
+              </p>
+            </div>
+          )}
           <Button
             onClick={addToCart}
             className="mt-3 w-full md:w-2/5"
             text="Add to cart"
           />
-          {data?.description && (
-            <Title className="mt-3 text-3xl">Description</Title>
-          )}
         </div>
       </div>
     </ContentContainer>

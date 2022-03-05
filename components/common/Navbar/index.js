@@ -32,8 +32,8 @@ export default function Header(props) {
   const links = [
     { name: 'Nến thơm', path: '/candle' },
     { name: 'Tinh dầu', path: '/oil' },
-    { name: 'Thông tin', path: '/about' },
-    { name: 'Shopping', path: '/all' },
+    // { name: 'Thông tin', path: '/about' },
+    { name: 'Thanh toán', path: '/checkout' },
   ]
 
   const onOpenCart = () => {

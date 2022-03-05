@@ -9,10 +9,12 @@ import {
 import { AiOutlineClose, AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import CurrencyFormat from 'react-currency-format'
 import { Button } from '../index'
+import { useRouter } from 'next/router'
 
 export default function Cart(props) {
   const [state, dispatch] = useContext(CartContext)
   const { shown } = state
+  const router = useRouter()
   const onClose = () => {
     dispatch({
       type: CLOSE_CART,
@@ -110,7 +112,14 @@ export default function Cart(props) {
               </p>
             </div>
             <div className="mt-5">
-              <Button className="w-full" text="Thanh toán" />
+              <Button
+                onClick={() => {
+                  router.push('/checkout')
+                  onClose()
+                }}
+                className="w-full"
+                text="Thanh toán"
+              />
             </div>
           </>
         )}

@@ -15,12 +15,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <CartContextProvider>
       <ProductContextProdiver>
+        <Cart />
         <Layout>
           <Navbar navbarWhite={!whitedList.includes(pathname)} />
-          <Cart />
-          <Component {...pageProps} />
-          <MetaInfo />
-          <Footer />
+          <div className="flex-grow">
+            <Component {...pageProps} />
+          </div>
+          <div>
+            <MetaInfo />
+            <Footer />
+          </div>
         </Layout>
       </ProductContextProdiver>
     </CartContextProvider>

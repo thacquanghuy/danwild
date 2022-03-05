@@ -10,7 +10,16 @@ export const CartContext = createContext()
 
 const initState = {
   shown: false,
-  items: [],
+  items: [
+    {
+      id: 5,
+      name: 'This is a name',
+      price: 400000,
+      image:
+        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
+      quantity: 1,
+    },
+  ],
 }
 
 const reducer = (state, action) => {
