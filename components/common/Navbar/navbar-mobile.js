@@ -3,9 +3,18 @@ import styles from './navbar.module.scss'
 import { AiOutlineClose } from 'react-icons/ai'
 import { BsFacebook } from 'react-icons/bs'
 import { Title } from '../Text'
+import { useRouter } from 'next/router'
 
+const links = [
+  { name: 'Nến thơm', path: '/candle' },
+  { name: 'Tinh dầu', path: '/oil' },
+  // { name: 'Thông tin', path: '/about' },
+  { name: 'Thanh toán', path: '/checkout' },
+]
 export default function NavbarMobile(props) {
   const { hidden, onClose } = props
+  const router = useRouter()
+
   return (
     <>
       {!hidden && (
@@ -37,10 +46,18 @@ export default function NavbarMobile(props) {
             />
           </div>
           <div className="grid-flow-rows mt-8 grid gap-5">
-            <Title>Go to products</Title>
-            <Title>Go to products</Title>
-            <Title>Go to products</Title>
-            <Title>Go to products</Title>
+            {links.map((l) => (
+              <Title
+                className="cursor-pointer"
+                key={l.name}
+                onClick={() => {
+                  router.push(l.path)
+                  onClose()
+                }}
+              >
+                {l.name}
+              </Title>
+            ))}
             <div>
               <BsFacebook size={25} />
             </div>
