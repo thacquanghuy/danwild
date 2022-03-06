@@ -51,7 +51,7 @@ export default function IndexPage(props) {
             </div>
           ))}
         </Slide>
-        <div className={styles[`view-button-container`]}>
+        <div className={`${styles[`view-button-container`]} hidden md:block `}>
           <Button text="Xem tất cả" />
         </div>
         <div className={`${styles['buttons']}`}>

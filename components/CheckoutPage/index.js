@@ -132,7 +132,7 @@ export default function Checkout(props) {
               </div>
             ))}
             <div className="flex justify-between">
-              <p>Tổng:</p>
+              <p className="font-bold uppercase">Tổng:</p>
               <Price className="font-bold" text={total} />
             </div>
           </div>
