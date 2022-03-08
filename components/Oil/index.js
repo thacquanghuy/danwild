@@ -19,6 +19,7 @@ export default function OilPage(props) {
         <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 ">
           {candleProducts.map((p, idx) => (
             <Product
+              type="oil"
               data={{
                 ...p,
               }}

@@ -3,9 +3,9 @@ import Content from '../../components/ProductDetail'
 
 const Product = () => {
   const router = useRouter()
-  const { pid } = router.query
+  const { pid, type } = router.query
 
-  return <Content id={pid} />
+  return <Content id={pid} type={type} />
 }
 
 export default Product

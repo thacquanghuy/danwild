@@ -33,7 +33,7 @@ export default function Product(props) {
 
       <div className="mt-2">
         <Title
-          onClick={() => router.push(`/product/${data.id}`)}
+          onClick={() => router.push(`/product/${data.id}?type=${props.type}`)}
           className="cursor-pointer"
         >
           {data.name}

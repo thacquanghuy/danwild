@@ -73,6 +73,7 @@ export default function IndexPage(props) {
         <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 ">
           {candleProducts.map((p, idx) => (
             <Product
+              type="candle"
               data={{
                 ...p,
               }}
@@ -98,6 +99,7 @@ export default function IndexPage(props) {
         <div className=" mb-10 grid-cols-4 gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:gap-8 md:px-48">
           {oilProducts.map((p, idx) => (
             <Product
+              type="oil"
               key={p.id}
               data={{
                 ...p,

@@ -6,8 +6,22 @@ import { CartContextProvider } from '../context/cart'
 import { useRouter } from 'next/router'
 import { ProductContextProdiver } from '../context/product'
 import React from 'react'
-
+import { firebaseConfig } from '../firestore.config'
 import 'animate.css'
+import { initializeApp, getApp } from 'firebase/app'
+import { getOrders } from '../services/order'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify'
+
+let fireapp
+
+try {
+  fireapp = getApp()
+} catch (error) {
+  fireapp = initializeApp({
+    ...firebaseConfig,
+  })
+}
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -23,12 +37,20 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => clearInterval(inter)
   }, [])
 
+  React.useEffect(() => {
+    const getData = async () => {
+      const res = await getOrders()
+    }
+    getData()
+  }, [])
+
   return (
     <CartContextProvider>
       <ProductContextProdiver>
         <>
           <Cart />
           <Layout>
+            <ToastContainer />
             {!loading ? (
               <>
                 <Navbar navbarWhite={!whitedList.includes(pathname)} />

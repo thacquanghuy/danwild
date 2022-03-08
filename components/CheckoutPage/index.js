@@ -4,14 +4,32 @@ import { CartContext } from '../../context/cart'
 import { Title, Price } from '../common/Text'
 import { useRouter } from 'next/router'
 import { Button } from '../common'
+import { createOrder } from '../../services/order'
+import { toast } from 'react-toastify'
 
-const Form = () => {
+const Form = ({ order }) => {
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
-  const [adress, setAddress] = useState('')
+  const [address, setAddress] = useState('')
+  const router = useRouter()
 
-  const onSubmit = (e) => {}
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    const user = {
+      name,
+      phone,
+      email,
+      address,
+    }
+    const res = await createOrder({ customer: user, order })
+    if (!res) {
+      toast(
+        'Cảm ơn bạn đã mua hàng. Chúng tôi sẽ liên hệ trong thời gian sớm nhất.'
+      )
+      router.push('/')
+    }
+  }
   return (
     <form onSubmit={onSubmit} className="">
       <div className="group relative z-0 mb-6 w-full">
@@ -52,7 +70,7 @@ const Form = () => {
       </div>
       <div className="group relative z-0 mb-6 w-full">
         <input
-          value={adress}
+          value={address}
           onChange={(e) => setAddress(e.target.value)}
           type="text"
           name="address"
@@ -93,9 +111,11 @@ const Form = () => {
 export default function Checkout(props) {
   const router = useRouter()
   const [state, dispatch] = useContext(CartContext)
+  console.log(state)
   const total = state.items.reduce((acc, curr) => {
     return acc + curr.price * curr.quantity
   }, 0)
+
   return (
     <div className="mt-28 px-4 md:mt-40 md:px-48">
       <Title className="mb-2 text-center text-4xl">Thanh toán</Title>
@@ -137,7 +157,7 @@ export default function Checkout(props) {
             </div>
           </div>
           <div>
-            <Form />
+            <Form order={state.items} />
           </div>
         </div>
       )}

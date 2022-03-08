@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './product_detail.module.scss'
 import { ProductContext } from '../../context/product'
 import { CartContext } from '../../context/cart'
@@ -11,8 +11,8 @@ export default function ProductDetail(props) {
   const { id, type = 'candle' } = props
   const [state, dispatch] = useContext(ProductContext)
   const [cartState, dispatchCart] = useContext(CartContext)
-
   const data = state[type].find((p) => p?.id == id)
+
   const addToCart = () => {
     dispatchCart({
       type: ADD_ITEM_TO_CART,
@@ -20,6 +20,8 @@ export default function ProductDetail(props) {
     })
     dispatchCart({ type: OPEN_CART })
   }
+  React.useEffect(() => {}, [type])
+
   return (
     <ContentContainer>
       <div className="grid-flow-col md:grid md:grid-flow-row md:grid-cols-12 md:gap-20">
