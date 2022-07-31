@@ -7,6 +7,7 @@ import { Title } from '../common/Text'
 export default function CandlePage(props) {
   const [state, dispatch] = useContext(ProductContext)
   const candleProducts = state.candle
+	console.log('candel')
   return (
     <div>
       <img
