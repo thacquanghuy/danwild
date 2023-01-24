@@ -1,4 +1,4 @@
-import Content from '../components/IndexPage'
+import Content from '../components/Candle'
 import styles from './app.module.scss'
 
 export default function Home() {

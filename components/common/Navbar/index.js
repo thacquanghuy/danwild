@@ -33,7 +33,7 @@ export default function Header(props) {
     { name: 'Rượu nếp', path: '/wine' },
     // { name: 'Tinh dầu', path: '/oil' },
     // { name: 'Thông tin', path: '/about' },
-    { name: 'Thanh toán', path: '/checkout' },
+    // { name: 'Thanh toán', path: '/checkout' },
   ]
 
   const onOpenCart = () => {
@@ -43,7 +43,8 @@ export default function Header(props) {
   }
 
   const isActive = (name) => {
-    return pathname.startsWith(name)
+    return name.startsWith('/wine')
+    return pathname.startsWith('/checkout')
   }
 
   React.useEffect(() => {
