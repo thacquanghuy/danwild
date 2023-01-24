@@ -26,7 +26,7 @@ try {
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   const pathname = router?.pathname
-  const whitedList = ['/', '/oil', '/candle']
+  const whitedList = ['/', '/wine']
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {

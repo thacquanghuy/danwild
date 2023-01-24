@@ -30,8 +30,8 @@ export default function Header(props) {
   const active = state.items.length > 0
 
   const links = [
-    { name: 'Nến thơm', path: '/candle' },
-    { name: 'Tinh dầu', path: '/oil' },
+    { name: 'Rượu nếp', path: '/wine' },
+    // { name: 'Tinh dầu', path: '/oil' },
     // { name: 'Thông tin', path: '/about' },
     { name: 'Thanh toán', path: '/checkout' },
   ]

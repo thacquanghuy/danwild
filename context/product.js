@@ -6,48 +6,7 @@ const initState = {
   candle: [
     {
       id: 1,
-      name: 'This is a name',
-      price: 400000,
-      image:
-        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
-      description: 'Elit aliqua labore commodo esse pariatur nulla amet do',
-    },
-    {
-      id: 2,
-      name: 'This is a name',
-      price: 400000,
-      image:
-        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
-      description: 'Elit aliqua labore commodo esse pariatur nulla amet do',
-    },
-    {
-      id: 3,
-      name: 'This is a name',
-      price: 400000,
-      image:
-        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
-      description: 'Elit aliqua labore commodo esse pariatur nulla amet do',
-    },
-    ,
-    {
-      id: 4,
-      name: 'This is a name',
-      price: 400000,
-      image:
-        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
-      description: 'Elit aliqua labore commodo esse pariatur nulla amet do',
-    },
-    {
-      id: 5,
-      name: 'This is a name',
-      price: 400000,
-      image:
-        'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',
-      description: 'Elit aliqua labore commodo esse pariatur nulla amet do',
-    },
-    {
-      id: 6,
-      name: 'This is a name',
+      name: 'Rượu nếp ',
       price: 400000,
       image:
         'https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1638124727-best-soy-wax-candles-white-lavender-1638124713.jpg',

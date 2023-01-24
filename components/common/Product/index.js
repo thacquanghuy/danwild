@@ -24,7 +24,10 @@ export default function Product(props) {
       } mr-4 inline-block w-3/5 overflow-hidden md:mr-0 md:block md:w-full`}
     >
       <div className={styles[`image-container`]}>
-        <img src={data.image} className={`w-full ${styles['product-image']}`} />
+        <img
+          src={'/wine.jpeg'}
+          className={`w-full ${styles['product-image']}`}
+        />
         <button onClick={onAdd} className={`${styles['cart-button']}`}>
           Thêm vào giỏ
           <AiOutlineShopping size={20} className="ml-2" />
