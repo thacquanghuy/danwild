@@ -1,7 +1,8 @@
 .nav-bar {
   color: #fff;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent);
-  position: fixed;
+  // background: linear-gradient(rgba(0, 0, 0, 0.5) 0px, transparent);
+  background: #fff;
+  // position: fixed;
   z-index: 100;
   top: 0;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -13,11 +14,11 @@
         font-size: 1rem;
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-
+        color: #000;
         &--active {
           p::after {
             opacity: 1 !important;
-            background-color: #fff !important;
+            background-color: #000 !important;
             transform: translate3d(0, 0, 0) !important ;
           }
         }

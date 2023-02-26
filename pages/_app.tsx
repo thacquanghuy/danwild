@@ -13,15 +13,15 @@ import { getOrders } from '../services/order'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
-let fireapp
+// let fireapp
 
-try {
-  fireapp = getApp()
-} catch (error) {
-  fireapp = initializeApp({
-    ...firebaseConfig,
-  })
-}
+// try {
+//   fireapp = getApp()
+// } catch (error) {
+//   fireapp = initializeApp({
+//     ...firebaseConfig,
+//   })
+// }
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -37,12 +37,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => clearInterval(inter)
   }, [])
 
-  React.useEffect(() => {
-    const getData = async () => {
-      const res = await getOrders()
-    }
-    getData()
-  }, [])
+  // React.useEffect(() => {
+  //   const getData = async () => {
+  //     const res = await getOrders()
+  //   }
+  //   getData()
+  // }, [])
 
   return (
     <CartContextProvider>

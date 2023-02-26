@@ -28,21 +28,21 @@ export default function Product(props) {
           src={'/wine.jpeg'}
           className={`w-full ${styles['product-image']}`}
         />
-        <button onClick={onAdd} className={`${styles['cart-button']}`}>
+        {/* <button onClick={onAdd} className={`${styles['cart-button']}`}>
           Thêm vào giỏ
           <AiOutlineShopping size={20} className="ml-2" />
-        </button>
+        </button> */}
       </div>
 
-      <div className="mt-2">
+      <div className="mt-3">
         <Title
           onClick={() => router.push(`/product/${data.id}?type=${props.type}`)}
           className="cursor-pointer"
         >
-          {data.name}
+          Rượu nếp
         </Title>
       </div>
-      <Price text={data.price} className={styles[`product-price`]}></Price>
+      {/* <Price text={data.price} className={styles[`product-price`]}></Price> */}
     </div>
   )
 }

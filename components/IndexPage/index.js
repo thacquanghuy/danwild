@@ -1,14 +1,14 @@
 import React, { useEffect, useRef, useContext } from 'react'
 import styles from './index_page.module.scss'
-import { Slide } from 'react-slideshow-image'
-import 'react-slideshow-image/dist/styles.css'
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Button, Product, BackgroundHero } from '../common'
 import { ProductContext } from '../../context/product'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 export default function IndexPage(props) {
+  const makingPics = [1, 2, 3, 4]
   const [state] = useContext(ProductContext)
   const router = useRouter()
   const candleProducts = state.candle
@@ -30,20 +30,20 @@ export default function IndexPage(props) {
 
   const ref = useRef(null)
 
-  useEffect(() => {
-    if (FB?.CustomerChat) {
-      FB.CustomerChat.show()
-    }
-    const inter = setInterval(() => {
-      ref.current.goNext()
-    }, 7000)
+  // useEffect(() => {
+  //   if (FB?.CustomerChat) {
+  //     FB.CustomerChat.show()
+  //   }
+  //   const inter = setInterval(() => {
+  //     ref.current.goNext()
+  //   }, 7000)
 
-    return () => clearInterval(inter)
-  }, [])
+  //   return () => clearInterval(inter)
+  // }, [])
 
   return (
     <div className={styles['page-container']}>
-      <div className={styles['slide-container']}>
+      {/* <div className={styles['slide-container']}>
         <Slide ref={ref} {...properties}>
           {slideImages.map((each, index) => (
             <div key={index} className={styles['each-slide']}>
@@ -51,6 +51,7 @@ export default function IndexPage(props) {
             </div>
           ))}
         </Slide>
+        <Image layout='' src="/danwild-bg.jpg" />{' '}
         <div className={`${styles[`view-button-container`]} hidden md:block `}>
           <Button text="Xem tất cả" />
         </div>
@@ -68,50 +69,35 @@ export default function IndexPage(props) {
             icon={faAngleRight}
           />
         </div>
+      </div> */}
+      <div className={styles[`background-container`]}>
+        <Image src="/danwild-bg-1.jpg" layout="fill" />
       </div>
       <section className={`${styles[`product-section`]} mt-8 md:mt-20`}>
-        <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 ">
+        <h1 className={`${styles[`header`]} mb-10`}>Sản phẩm của chúng tôi</h1>
+        {/* <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 "> */}
+        <div className={styles[`prod-container`]}>
           {candleProducts.map((p, idx) => (
-            <Product
-              type="candle"
-              data={{
-                ...p,
-              }}
-              key={p.id}
-            />
+            <div className={styles[`prod`]}>
+              <Product
+                type="candle"
+                data={{
+                  ...p,
+                }}
+                key={p.id}
+              />
+            </div>
           ))}
-        </div>
-        <div className="mt-10 grid place-content-center">
-          <Button
-            onClick={() => router.push('/candle')}
-            text="Sản phẩm nến thơm"
-          />
         </div>
       </section>
-      <div className="mt-16">
-        <BackgroundHero
-          image={
-            'https://images.unsplash.com/photo-1515688594390-b649af70d282?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1106&q=80'
-          }
-        />
-      </div>
-      <section className={`${styles[`product-section`]}  mt-8 md:mt-20`}>
-        <div className=" mb-10 grid-cols-4 gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:gap-8 md:px-48">
-          {oilProducts.map((p, idx) => (
-            <Product
-              type="oil"
-              key={p.id}
-              data={{
-                ...p,
-              }}
-            />
+      <section>
+        <h1 className={`${styles[`header`]} mb-10`}>
+          Được tạo ra từ những gì tinh túy nhất
+        </h1>
+        <div className={styles[`making-container`]}>
+          {makingPics.map((id) => (
+            <div>{/* <Image /> */}</div>
           ))}
-        </div>
-        <div className="grid place-content-center">
-          <Button
-            onClick={() => router.push('/oil')}
-            text="Sản phẩm tinh dầu"
-          />
         </div>
       </section>
     </div>

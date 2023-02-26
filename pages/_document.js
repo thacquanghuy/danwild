@@ -23,7 +23,7 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
             window.fbAsyncInit = function() {
@@ -49,7 +49,7 @@ class MyDocument extends Document {
             defer
             crossOrigin="anonymous"
             src="https://connect.facebook.net/en_US/sdk.js"
-          ></script>
+          ></script> */}
           <Main />
           <NextScript />
         </body>

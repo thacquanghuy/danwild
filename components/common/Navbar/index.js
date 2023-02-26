@@ -1,14 +1,14 @@
 import React, { useContext } from 'react'
 import styles from './navbar.module.scss'
-import Image from 'next/image'
-import { AiOutlineShopping } from 'react-icons/ai'
-import { GiHamburgerMenu } from 'react-icons/gi'
+// import { AiOutlineShopping } from 'react-icons/ai'
+// import { GiHamburgerMenu } from 'react-icons/gi'
 import NavbarMobile from './navbar-mobile'
 import { CartContext } from '../../../context/cart'
 import { OPEN_CART } from '../../../context/cartActionType'
 import { Title } from '../Text'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 export default function Header(props) {
   const [y, setY] = React.useState(null)
@@ -30,10 +30,10 @@ export default function Header(props) {
   const active = state.items.length > 0
 
   const links = [
-    { name: 'Rượu nếp', path: '/wine' },
+    // { name: 'Home', path: '/' },
     // { name: 'Tinh dầu', path: '/oil' },
     // { name: 'Thông tin', path: '/about' },
-    { name: 'Thanh toán', path: '/checkout' },
+    // { name: 'Thanh toán', path: '/checkout' },
   ]
 
   const onOpenCart = () => {
@@ -46,15 +46,15 @@ export default function Header(props) {
     return pathname.startsWith(name)
   }
 
-  React.useEffect(() => {
-    setY(window.scrollY)
-    window.addEventListener('scroll', scrollListener)
+  // React.useEffect(() => {
+  //   setY(window.scrollY)
+  //   window.addEventListener('scroll', scrollListener)
 
-    return () => {
-      // return a cleanup function to unregister our function since its gonna run multiple times
-      window.removeEventListener('scroll', scrollListener)
-    }
-  }, [y])
+  //   return () => {
+  //     // return a cleanup function to unregister our function since its gonna run multiple times
+  //     window.removeEventListener('scroll', scrollListener)
+  //   }
+  // }, [y])
 
   return (
     <div
@@ -62,16 +62,16 @@ export default function Header(props) {
         isWhite || navbarWhite
           ? `${styles['nav-bar']} ${styles['nav-bar--white']}`
           : styles['nav-bar']
-      } px- flex w-full flex-row py-4 px-4 md:py-6 md:px-48`}
+      } px- flex w-full flex-row py-0 px-0 md:py-0 md:px-48`}
     >
       <div className="flex basis-1/5 cursor-pointer items-center justify-items-start">
         <Image
           onClick={() => {
             router.push('/')
           }}
-          width="100px"
-          height="50px"
-          src="https://www.webfx.com/wp-content/uploads/2021/10/webfx-logo.png"
+          width="150px"
+          height="100px"
+          src="/logo.jpg"
         />
       </div>
 
@@ -79,14 +79,15 @@ export default function Header(props) {
         className={`${styles['main-nav-container']} flex grid basis-3/5 items-center justify-items-center`}
       >
         <ul
-          className={`${styles['nav-item-container']} flex hidden w-full flex-row	 justify-between lg:flex`}
+          className={`${styles['nav-item-container']} flex w-full flex-row	 justify-between lg:flex`}
         >
           {links.map((l) => (
             <li
               key={l.name}
-              className={`${styles['nav-item']} ${
-                isActive(l.path) && styles[`nav-item--active`]
-              }`}
+              //   className={`${styles['nav-item']} ${
+              //     isActive(l.path) && styles[`nav-item--active`]
+              //   }`
+              // }
             >
               <Title>
                 <Link href={l.path}>{l.name}</Link>
@@ -95,7 +96,7 @@ export default function Header(props) {
           ))}
         </ul>
       </div>
-      <div className="flex grid basis-1/5 grid-cols-2 items-center justify-items-end">
+      {/* <div className="flex grid basis-1/5 grid-cols-2 items-center justify-items-end">
         <GiHamburgerMenu
           className="block md:hidden"
           onClick={() => {
@@ -117,7 +118,7 @@ export default function Header(props) {
             }
           />
         </div>
-      </div>
+      </div> */}
       <NavbarMobile
         onClose={() => {
           setHidden(true)
