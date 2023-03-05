@@ -72,10 +72,11 @@ export default function IndexPage(props) {
           />
         </div>
       </div> */}
-      <div className={styles[`background-container`]}>
+      {/* <div className={styles[`background-container`]}>
         <Image src="/danwild-bg-1.jpg" layout="fill" />
-      </div>
-      <section className={`${styles[`product-section`]} mt-8 md:mt-12`}>
+      </div> */}
+      {/* mt-8 md:mt-12 */}
+      <section className={`${styles[`product-section`]} `}>
         <h1 className={`${styles[`header`]} mb-10`}>Sản phẩm của chúng tôi</h1>
         {/* <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 "> */}
         <div className={styles[`prod-container`]}>
@@ -110,7 +111,6 @@ export default function IndexPage(props) {
           ))}
         </div>
       </section>
-
       <section>
         <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
           Kiểm chứng bởi những khách hàng thân thiết
