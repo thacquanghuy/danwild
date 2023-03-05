@@ -32,51 +32,9 @@ export default function IndexPage(props) {
 
   const ref = useRef(null)
 
-  // useEffect(() => {
-  //   if (FB?.CustomerChat) {
-  //     FB.CustomerChat.show()
-  //   }
-  //   const inter = setInterval(() => {
-  //     ref.current.goNext()
-  //   }, 7000)
-
-  //   return () => clearInterval(inter)
-  // }, [])
-
   return (
     <div className={styles['page-container']}>
-      {/* <div className={styles['slide-container']}>
-        <Slide ref={ref} {...properties}>
-          {slideImages.map((each, index) => (
-            <div key={index} className={styles['each-slide']}>
-              <img className={styles['lazy']} src={each} alt="sample" />
-            </div>
-          ))}
-        </Slide>
-        <Image layout='' src="/danwild-bg.jpg" />{' '}
-        <div className={`${styles[`view-button-container`]} hidden md:block `}>
-          <Button text="Xem tất cả" />
-        </div>
-        <div className={`${styles['buttons']}`}>
-          <FontAwesomeIcon
-            className={`${styles['arrow']} ${styles['arrow-left']}`}
-            color="#fff"
-            onClick={() => ref.current.goBack()}
-            icon={faAngleLeft}
-          />
-          <FontAwesomeIcon
-            className={`${styles['arrow']} ${styles['arrow-right']}`}
-            color="#fff"
-            onClick={() => ref.current.goNext()}
-            icon={faAngleRight}
-          />
-        </div>
-      </div> */}
-      {/* <div className={styles[`background-container`]}>
-        <Image src="/danwild-bg-1.jpg" layout="fill" />
-      </div> */}
-      {/* mt-8 md:mt-12 */}
-      <section className={`${styles[`product-section`]} `}>
+      <section>
         <h1 className={`${styles[`header`]} mb-10`}>Sản phẩm của chúng tôi</h1>
         {/* <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 "> */}
         <div className={styles[`prod-container`]}>
@@ -94,7 +52,7 @@ export default function IndexPage(props) {
         </div>
       </section>
       <section>
-        <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
+        <h1 className={`${styles[`header`]} mb-10 mt-12`}>
           Được tạo ra từ những hạt gạo tinh túy nhất
         </h1>
         <div className={styles[`making-container`]}>
@@ -112,7 +70,7 @@ export default function IndexPage(props) {
         </div>
       </section>
       <section>
-        <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
+        <h1 className={`${styles[`header`]} mb-10 mt-12`}>
           Kiểm chứng bởi những khách hàng thân thiết
         </h1>
         <div className={styles[`place-container`]}>

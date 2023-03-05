@@ -1,6 +1,13 @@
 .index-page {
 }
 
+.page-container {
+  // background-color: red;
+  // @media screen and (max-width: 640px) {
+  //   height: 100vh;
+  // }
+}
+
 .background {
   background-size: cover;
   background-repeat: none;
@@ -114,20 +121,38 @@
   text-transform: uppercase;
   text-align: center;
   // letter-spacing: 0.2rem;
+
+  @media screen and (max-width: 640px) {
+    //do Smth
+    // width: 25%;
+    // height: 25%;
+    font-size: 20px;
+  }
 }
 
 .prod-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  // justify-items: center;
+  margin: 0;
+
   .prod {
     width: auto;
     height: auto;
+    margin: 0;
+    width: 25%;
+    height: 25%;
 
-    @media screen and (min-width: 640px) {
+    @media screen and (max-width: 640px) {
       //do Smth
-      width: 25%;
-      height: 25%;
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+      margin: 0;
     }
   }
 }
@@ -137,6 +162,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 500px;
   background-color: #fff;
+
+  @media screen and (max-width: 640px) {
+    //do Smth
+    grid-template-rows: 200px;
+  }
+
   .image-container {
     width: 100%;
     height: 100%;
