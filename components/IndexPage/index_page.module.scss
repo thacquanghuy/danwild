@@ -131,3 +131,58 @@
     }
   }
 }
+
+.making-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 300px;
+
+  .image-container {
+    width: 100%;
+    height: 100%;
+    filter: brightness(80%);
+    overflow: hidden;
+    span,
+    img {
+      filter: brightness(80%);
+
+      transition: all 0.5s;
+      &:hover {
+        filter: brightness(100%);
+
+        transform: scale(1.1);
+      }
+      transform: scale(1);
+      width: 100% !important;
+      height: 100% !important;
+      position: relative !important;
+      object-fit: cover; // Optional
+    }
+  }
+}
+
+.place-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  // grid-template-rows: 300px;
+
+  .image-container {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    span,
+    img {
+      filter: brightness(80%);
+      transition: all 0.5s;
+      &:hover {
+        filter: brightness(100%);
+        transform: scale(1.1);
+      }
+      transform: scale(1);
+      width: 100% !important;
+      height: 100% !important;
+      position: relative !important;
+      object-fit: cover; // Optional
+    }
+  }
+}

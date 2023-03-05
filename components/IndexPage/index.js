@@ -8,7 +8,9 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 export default function IndexPage(props) {
-  const makingPics = [1, 2, 3, 4]
+  const makingPics = [1, 2, 3, 5]
+  const places = [1, 2, 3]
+
   const [state] = useContext(ProductContext)
   const router = useRouter()
   const candleProducts = state.candle
@@ -73,7 +75,7 @@ export default function IndexPage(props) {
       <div className={styles[`background-container`]}>
         <Image src="/danwild-bg-1.jpg" layout="fill" />
       </div>
-      <section className={`${styles[`product-section`]} mt-8 md:mt-20`}>
+      <section className={`${styles[`product-section`]} mt-8 md:mt-12`}>
         <h1 className={`${styles[`header`]} mb-10`}>Sản phẩm của chúng tôi</h1>
         {/* <div className="gap-4 overflow-x-auto whitespace-nowrap px-4 md:grid md:grid-cols-3 md:gap-8 md:px-48 "> */}
         <div className={styles[`prod-container`]}>
@@ -91,12 +93,39 @@ export default function IndexPage(props) {
         </div>
       </section>
       <section>
-        <h1 className={`${styles[`header`]} mb-10`}>
-          Được tạo ra từ những gì tinh túy nhất
+        <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
+          Được tạo ra từ những hạt gạo tinh túy nhất
         </h1>
         <div className={styles[`making-container`]}>
           {makingPics.map((id) => (
-            <div>{/* <Image /> */}</div>
+            <div className={styles[`image-container`]}>
+              <Image
+                key={id}
+                // width={500}
+                // height={300}
+                src={`/making-${id}.jpg`}
+                layout="fill"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
+          Được yêu thích bởi những khách hàng thân thiết
+        </h1>
+        <div className={styles[`place-container`]}>
+          {places.map((id) => (
+            <div className={styles[`image-container`]}>
+              <Image
+                key={id}
+                // width={500}
+                // height={300}
+                src={`/place-${id}.jpg`}
+                layout="fill"
+              />
+            </div>
           ))}
         </div>
       </section>

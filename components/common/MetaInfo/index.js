@@ -17,6 +17,7 @@ export default function MetaInfo(props) {
     },
     zoom: 11,
   }
+  return null
   return (
     <div className="a mt-10 grid-flow-row-dense grid-cols-4 gap-4 px-4 md:mt-20 md:grid md:gap-12 md:px-48">
       {isMobile ? (
