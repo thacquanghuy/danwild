@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 export default function IndexPage(props) {
-  const makingPics = [1, 2, 3, 5]
+  const makingPics = [1, 2, 3]
   const places = [1, 2, 3]
 
   const [state] = useContext(ProductContext)
@@ -113,7 +113,7 @@ export default function IndexPage(props) {
 
       <section>
         <h1 className={`${styles[`header`]} mb-10 md:mt-12`}>
-          Được yêu thích bởi những khách hàng thân thiết
+          Kiểm chứng bởi những khách hàng thân thiết
         </h1>
         <div className={styles[`place-container`]}>
           {places.map((id) => (
